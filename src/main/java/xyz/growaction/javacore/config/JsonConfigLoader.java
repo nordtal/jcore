@@ -97,6 +97,9 @@ public class JsonConfigLoader {
         LOG.info("Config file '{}' has been updated", configFile.getName());
         printDifferences(configFile.getName(), differences);
 
+        // Run the postLoad implementation
+        mergedConfig.postLoad();
+
         return mergedConfig;
     }
 
@@ -259,6 +262,8 @@ public class JsonConfigLoader {
      * @author Till Hoffmann / @tillhfm - 16.04.2025
      */
     private static void writeInstanceToFile(final @NotNull File configFile, final @NotNull JsonConfig instance) throws ConfigWriteException {
+        // Run the preSave implementation
+        instance.preSave();
         try {
             if (configFile.getParentFile().mkdirs() || configFile.createNewFile()) {
                 LOG.info("Created config file {} for class type {}", configFile.getName(), instance.getClass().getSimpleName());
