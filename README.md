@@ -1,5 +1,8 @@
 # nordtal.eu JCore
 
+> **Archived.** jcore lives on in [nordtal/season-2](https://github.com/nordtal/season-2): its spec
+> layer is the module `spec` there, released with the season. This repository takes no more changes.
+
 A Java 25 library, built with Gradle, providing shared libraries and infrastructure code for
 nordtal.eu's Java applications.
 
